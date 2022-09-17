@@ -3,7 +3,7 @@
 # Natami Masternode Setup Guide
 ***
 ## Required
-1) **NATA collateral value at current block** ([consult the collateral table](../../README.md#rewards-breakdown))
+1) **NATA collateral value at current block** ([consult the collateral table](reward_structure.png))
 2) **Local Wallet https://github.com/Natamicoin/Natamicoin/releases/latest**
 3) **VPS with UBUNTU 18.04** (it is possible to work on other versions but it is not tested)
 4) **Putty https://www.putty.org/**
@@ -11,7 +11,7 @@
 ***
 
 ***On your Local Wallet***
-* Create an address with a label MN1 and send exactly the collateral amount to it ([consult the collateral table](../../README.md#rewards-breakdown)).
+* Create an address with a label MN1 and send exactly the collateral amount to it ([consult the collateral table](reward_structure.png)).
  Wait to complete 6 confirmations on “ Payment to yourself “ created.
  Or 15 confirmations if sent from an external wallet.
 
