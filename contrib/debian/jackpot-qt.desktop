@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Natami 
+Comment=Natami P2P Cryptocurrency
+Comment[fr]=Natami, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Natami, eşten eşe kriptografik sanal para birimi
+Exec=natami-qt %u
+Terminal=false
+Type=Application
+Icon=natami128
+MimeType=x-scheme-handler/natami;
+Categories=Office;Finance;
+StartupWMClass=natami-qt

@@ -1,0 +1,6 @@
+usr/local/bin/natami-qt usr/bin
+share/pixmaps/natami32.xpm usr/share/pixmaps
+share/pixmaps/natami16.xpm usr/share/pixmaps
+share/pixmaps/natami128.png usr/share/pixmaps
+debian/natami-qt.desktop usr/share/applications
+debian/natami-qt.protocol usr/share/kde4/services/

@@ -1,0 +1,8 @@
+/usr/bin/natami-cli		--	gen_context(system_u:object_r:natami_exec_t,s0)
+/usr/sbin/natamid		--	gen_context(system_u:object_r:natami_exec_t,s0)
+/usr/lib(64)?/natami/natamid		--	gen_context(system_u:object_r:natami_exec_t,s0)
+
+/etc/natami(/.*)?		gen_context(system_u:object_r:natami_conf_t,s0)
+/var/lib/natami(/.*)?		gen_context(system_u:object_r:natami_var_lib_t,s0)
+
+(/var)?/run/natamid(/.*)?   gen_context(system_u:object_r:natami_var_run_t,s0)

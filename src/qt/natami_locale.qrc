@@ -1,0 +1,18 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="de">locale/natami_de.qm</file>
+        <file alias="en">locale/natami_en.qm</file>
+        <file alias="en_US">locale/natami_en_US.qm</file>
+        <file alias="es">locale/natami_es.qm</file>
+        <file alias="es_ES">locale/natami_es_ES.qm</file>
+        <file alias="fr_FR">locale/natami_fr_FR.qm</file>
+        <file alias="hr_HR">locale/natami_hr_HR.qm</file>
+        <file alias="it">locale/natami_it.qm</file>
+        <file alias="ko_KR">locale/natami_ko_KR.qm</file>
+        <file alias="nl">locale/natami_nl.qm</file>
+        <file alias="pl">locale/natami_pl.qm</file>
+        <file alias="ru">locale/natami_ru.qm</file>
+        <file alias="tr">locale/natami_tr.qm</file>
+        <file alias="zh_CN">locale/natami_zh_CN.qm</file>
+    </qresource>
+</RCC>

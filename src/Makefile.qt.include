@@ -1,0 +1,699 @@
+# Copyright (c) 2013-2016 The Bitcoin Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+bin_PROGRAMS += qt/natami-qt
+EXTRA_LIBRARIES += qt/libbitcoinqt.a
+
+# natami qt core #
+include Makefile.qt_locale.include
+
+QT_FORMS_UI = \
+  qt/forms/addressbookpage.ui \
+  qt/forms/askpassphrasedialog.ui \
+  qt/forms/coincontroldialog.ui \
+  qt/forms/editaddressdialog.ui \
+  qt/forms/helpmessagedialog.ui \
+  qt/forms/intro.ui \
+  qt/forms/openuridialog.ui \
+  qt/forms/optionsdialog.ui \
+  qt/forms/rpcconsole.ui \
+  qt/natami/forms/loadingdialog.ui \
+  qt/natami/forms/snackbar.ui \
+  qt/natami/forms/navmenuwidget.ui \
+  qt/natami/forms/lockunlock.ui \
+  qt/natami/forms/expandablebutton.ui \
+  qt/natami/forms/receivedialog.ui \
+  qt/natami/forms/topbar.ui \
+  qt/natami/forms/txrow.ui \
+  qt/natami/forms/dashboardwidget.ui \
+  qt/natami/forms/addresslabelrow.ui \
+  qt/natami/forms/contactdropdownrow.ui \
+  qt/natami/forms/mninfodialog.ui \
+  qt/natami/forms/optionbutton.ui \
+  qt/natami/forms/masternodewizarddialog.ui \
+  qt/natami/forms/mnrow.ui \
+  qt/natami/forms/masternodeswidget.ui \
+  qt/natami/forms/myaddressrow.ui \
+  qt/natami/forms/sendchangeaddressdialog.ui \
+  qt/natami/forms/sendconfirmdialog.ui \
+  qt/natami/forms/sendcustomfeedialog.ui \
+  qt/natami/forms/sendchangeaddressdialog.ui \
+  qt/natami/forms/sendmultirow.ui \
+  qt/natami/forms/send.ui \
+  qt/natami/forms/addnewaddressdialog.ui \
+  qt/natami/forms/addnewcontactdialog.ui \
+  qt/natami/forms/requestdialog.ui \
+  qt/natami/forms/receivewidget.ui \
+  qt/natami/forms/tooltipmenu.ui \
+  qt/natami/forms/addresseswidget.ui \
+  qt/natami/forms/defaultdialog.ui \
+  qt/natami/settings/forms/settingsbackupwallet.ui \
+  qt/natami/settings/forms/settingsexportcsv.ui \
+  qt/natami/settings/forms/settingsbittoolwidget.ui \
+  qt/natami/settings/forms/settingsconsolewidget.ui \
+  qt/natami/settings/forms/settingsdisplayoptionswidget.ui \
+  qt/natami/settings/forms/settingsfaqwidget.ui \
+  qt/natami/settings/forms/settingsinformationwidget.ui \
+  qt/natami/settings/forms/settingsmainoptionswidget.ui \
+  qt/natami/settings/forms/settingsmultisenddialog.ui \
+  qt/natami/settings/forms/settingsmultisendwidget.ui \
+  qt/natami/settings/forms/settingssignmessagewidgets.ui \
+  qt/natami/settings/forms/settingswalletoptionswidget.ui \
+  qt/natami/settings/forms/settingswalletrepairwidget.ui \
+  qt/natami/settings/forms/settingswidget.ui \
+  qt/natami/forms/welcomecontentwidget.ui \
+  qt/natami/forms/splash.ui
+
+QT_MOC_CPP = \
+  qt/moc_addressbookpage.cpp \
+  qt/moc_addresstablemodel.cpp \
+  qt/moc_askpassphrasedialog.cpp \
+  qt/moc_bantablemodel.cpp \
+  qt/moc_bitcoinaddressvalidator.cpp \
+  qt/natami/moc_natamigui.cpp \
+  qt/moc_bitcoinunits.cpp \
+  qt/moc_clientmodel.cpp \
+  qt/moc_coincontroldialog.cpp \
+  qt/moc_coincontroltreewidget.cpp \
+  qt/moc_csvmodelwriter.cpp \
+  qt/moc_editaddressdialog.cpp \
+  qt/moc_guiutil.cpp \
+  qt/moc_intro.cpp \
+  qt/moc_macdockiconhandler.cpp \
+  qt/moc_macnotificationhandler.cpp \
+  qt/moc_notificator.cpp \
+  qt/moc_openuridialog.cpp \
+  qt/moc_optionsdialog.cpp \
+  qt/moc_optionsmodel.cpp \
+  qt/moc_peertablemodel.cpp \
+  qt/moc_paymentserver.cpp \
+  qt/moc_qvalidatedlineedit.cpp \
+  qt/moc_qvaluecombobox.cpp \
+  qt/moc_recentrequeststablemodel.cpp \
+  qt/moc_rpcconsole.cpp \
+  qt/moc_trafficgraphwidget.cpp \
+  qt/moc_transactionfilterproxy.cpp \
+  qt/moc_transactiontablemodel.cpp \
+  qt/moc_utilitydialog.cpp \
+  qt/moc_walletmodel.cpp \
+  qt/natami/moc_loadingdialog.cpp \
+  qt/natami/moc_pwidget.cpp \
+  qt/natami/moc_focuseddialog.cpp \
+  qt/natami/moc_snackbar.cpp \
+  qt/natami/moc_navmenuwidget.cpp \
+  qt/natami/moc_lockunlock.cpp \
+  qt/natami/moc_expandablebutton.cpp \
+  qt/natami/moc_furabstractlistitemdelegate.cpp \
+  qt/natami/moc_receivedialog.cpp \
+  qt/natami/moc_pfborderimage.cpp \
+  qt/natami/moc_topbar.cpp \
+  qt/natami/moc_txrow.cpp \
+  qt/natami/moc_dashboardwidget.cpp \
+  qt/natami/moc_addresslabelrow.cpp \
+  qt/natami/moc_contactdropdownrow.cpp \
+  qt/natami/moc_mninfodialog.cpp \
+  qt/natami/moc_optionbutton.cpp \
+  qt/natami/moc_mnmodel.cpp \
+  qt/natami/moc_masternodewizarddialog.cpp \
+  qt/natami/moc_mnrow.cpp \
+  qt/natami/moc_masternodeswidget.cpp \
+  qt/natami/moc_myaddressrow.cpp \
+  qt/natami/moc_contactsdropdown.cpp \
+  qt/natami/moc_sendchangeaddressdialog.cpp \
+  qt/natami/moc_sendconfirmdialog.cpp \
+  qt/natami/moc_sendcustomfeedialog.cpp \
+  qt/natami/moc_sendchangeaddressdialog.cpp \
+  qt/natami/moc_sendmultirow.cpp \
+  qt/natami/moc_send.cpp \
+  qt/natami/moc_addnewaddressdialog.cpp \
+  qt/natami/moc_addnewcontactdialog.cpp \
+  qt/natami/moc_requestdialog.cpp \
+  qt/natami/moc_receivewidget.cpp \
+  qt/natami/moc_tooltipmenu.cpp \
+  qt/natami/moc_addresseswidget.cpp \
+  qt/natami/moc_defaultdialog.cpp \
+  qt/natami/settings/moc_settingsbackupwallet.cpp \
+  qt/natami/settings/moc_settingsexportcsv.cpp \
+  qt/natami/settings/moc_settingsbittoolwidget.cpp \
+  qt/natami/settings/moc_settingsconsolewidget.cpp \
+  qt/natami/settings/moc_settingsdisplayoptionswidget.cpp \
+  qt/natami/settings/moc_settingsfaqwidget.cpp \
+  qt/natami/settings/moc_settingsinformationwidget.cpp \
+  qt/natami/settings/moc_settingsmainoptionswidget.cpp \
+  qt/natami/settings/moc_settingsmultisenddialog.cpp \
+  qt/natami/settings/moc_settingsmultisendwidget.cpp \
+  qt/natami/settings/moc_settingssignmessagewidgets.cpp \
+  qt/natami/settings/moc_settingswalletoptionswidget.cpp \
+  qt/natami/settings/moc_settingswalletrepairwidget.cpp \
+  qt/natami/settings/moc_settingswidget.cpp \
+  qt/natami/moc_welcomecontentwidget.cpp \
+  qt/natami/moc_splash.cpp
+
+BITCOIN_MM = \
+  qt/macdockiconhandler.mm \
+  qt/macnotificationhandler.mm
+
+QT_MOC = \
+  qt/natami.moc \
+  qt/intro.moc \
+  qt/rpcconsole.moc \
+  qt/natami/settings/moc_settingsconsolewidget.cpp
+
+QT_QRC_CPP = qt/qrc_natami.cpp
+QT_QRC = qt/natami.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_natami_locale.cpp
+QT_QRC_LOCALE = qt/natami_locale.qrc
+
+PROTOBUF_CC = qt/paymentrequest.pb.cc
+PROTOBUF_H = qt/paymentrequest.pb.h
+PROTOBUF_PROTO = qt/paymentrequest.proto
+
+BITCOIN_QT_H = \
+  qt/addressbookpage.h \
+  qt/addresstablemodel.h \
+  qt/askpassphrasedialog.h \
+  qt/bantablemodel.h \
+  qt/bitcoinaddressvalidator.h \
+  qt/natami/natamigui.h \
+  qt/bitcoinunits.h \
+  qt/clientmodel.h \
+  qt/coincontroldialog.h \
+  qt/coincontroltreewidget.h \
+  qt/csvmodelwriter.h \
+  qt/editaddressdialog.h \
+  qt/guiconstants.h \
+  qt/guiutil.h \
+  qt/intro.h \
+  qt/macdockiconhandler.h \
+  qt/macnotificationhandler.h \
+  qt/networkstyle.h \
+  qt/notificator.h \
+  qt/openuridialog.h \
+  qt/optionsdialog.h \
+  qt/optionsmodel.h \
+  qt/paymentrequestplus.h \
+  qt/paymentserver.h \
+  qt/peertablemodel.h \
+  qt/platformstyle.h \
+  qt/qvalidatedlineedit.h \
+  qt/qvaluecombobox.h \
+  qt/recentrequeststablemodel.h \
+  qt/rpcconsole.h \
+  qt/trafficgraphwidget.h \
+  qt/transactionfilterproxy.h \
+  qt/transactionrecord.h \
+  qt/transactiontablemodel.h \
+  qt/utilitydialog.h \
+  qt/walletmodel.h \
+  qt/walletmodeltransaction.h \
+  qt/natami/prunnable.h \
+  qt/natami/pfborderimage.h \
+  qt/natami/loadingdialog.h \
+  qt/winshutdownmonitor.h \
+  qt/natami/pwidget.h \
+  qt/natami/focuseddialog.h \
+  qt/natami/guitransactionsutils.h \
+  qt/natami/snackbar.h \
+  qt/natami/navmenuwidget.h \
+  qt/natami/lockunlock.h \
+  qt/natami/receivedialog.h \
+  qt/natami/furlistrow.h \
+  qt/natami/furabstractlistitemdelegate.h \
+  qt/natami/txviewholder.h \
+  qt/natami/qtutils.h \
+  qt/natami/expandablebutton.h \
+  qt/natami/topbar.h \
+  qt/natami/txrow.h \
+  qt/natami/addressholder.h \
+  qt/natami/addressfilterproxymodel.h \
+  qt/natami/dashboardwidget.h \
+  qt/natami/addresslabelrow.h \
+  qt/natami/contactdropdownrow.h \
+  qt/natami/mninfodialog.h \
+  qt/natami/optionbutton.h \
+  qt/natami/mnmodel.h \
+  qt/natami/masternodewizarddialog.h \
+  qt/natami/mnrow.h \
+  qt/natami/masternodeswidget.h \
+  qt/natami/myaddressrow.h \
+  qt/natami/contactsdropdown.h \
+  qt/natami/sendchangeaddressdialog.h \
+  qt/natami/sendconfirmdialog.h \
+  qt/natami/sendcustomfeedialog.h \
+  qt/natami/sendchangeaddressdialog.h \
+  qt/natami/sendmultirow.h \
+  qt/natami/send.h \
+  qt/natami/addnewaddressdialog.h \
+  qt/natami/addnewcontactdialog.h \
+  qt/natami/requestdialog.h \
+  qt/natami/receivewidget.h \
+  qt/natami/tooltipmenu.h \
+  qt/natami/addresseswidget.h \
+  qt/natami/defaultdialog.h \
+  qt/natami/settings/settingsbackupwallet.h \
+  qt/natami/settings/settingsexportcsv.h \
+  qt/natami/settings/settingsbittoolwidget.h \
+  qt/natami/settings/settingsconsolewidget.h \
+  qt/natami/settings/settingsdisplayoptionswidget.h \
+  qt/natami/settings/settingsfaqwidget.h \
+  qt/natami/settings/settingsinformationwidget.h \
+  qt/natami/settings/settingsmainoptionswidget.h \
+  qt/natami/settings/settingsmultisenddialog.h \
+  qt/natami/settings/settingsmultisendwidget.h \
+  qt/natami/settings/settingssignmessagewidgets.h \
+  qt/natami/settings/settingswalletoptionswidget.h \
+  qt/natami/settings/settingswalletrepairwidget.h \
+  qt/natami/settings/settingswidget.h \
+  qt/natami/welcomecontentwidget.h \
+  qt/natami/splash.h
+
+RES_ICONS = \
+  qt/res/icons/bitcoin.ico \
+  qt/res/icons/bitcoin.png \
+  qt/res/icons/bitcoin_testnet.ico \
+  qt/res/icons/bitcoin_testnet.png \
+  qt/res/icons/bitcoin_regtest.png \
+  qt/res/icons/lock_closed.png \
+  qt/res/icons/lock_open.png \
+  qt/res/icons/overview.png \
+  qt/res/icons/ic-transaction-received.svg \
+  qt/res/icons/ic-transaction-mint.svg \
+  qt/res/icons/ic-transaction-sent.svg \
+  qt/res/icons/ic-transaction-staked.svg \
+  qt/natami/res/img/bg-dashboard-banner.png \
+  qt/natami/res/img/bg-multi-number-dark.svg \
+  qt/natami/res/img/ic-check-locked.svg \
+  qt/natami/res/img/ic-check-console.svg \
+  qt/natami/res/img/ic-nav-address.svg \
+  qt/natami/res/img/ic-update.svg \
+  qt/natami/res/img/bg-multi-number.svg \
+  qt/natami/res/img/ic-check-mint-off.svg \
+  qt/natami/res/img/ic-nav-dashboard-active.svg \
+  qt/natami/res/img/ic-wallet-status-locked.svg \
+  qt/natami/res/img/bg-splash.svg \
+  qt/natami/res/img/bg-splash.png \
+  qt/natami/res/img/ic-check-mint.svg \
+  qt/natami/res/img/ic-nav-dashboard-hover.svg \
+  qt/natami/res/img/ic-wallet-status-staking.svg \
+  qt/natami/res/img/ic-check-peers-off.svg \
+  qt/natami/res/img/ic-nav-dashboard.svg \
+  qt/natami/res/img/ic-wallet-status-unlocked.svg \
+  qt/natami/res/img/ic-check-peers.svg \
+  qt/natami/res/img/ic-nav-master-active.svg \
+  qt/natami/res/img/ic-watch-password-white.svg \
+  qt/natami/res/img/bg-welcome-container.jpg \
+  qt/natami/res/img/bg-welcome-container.png \
+  qt/natami/res/img/bg-welcome-container.svg \
+  qt/natami/res/img/bg-welcome-container@2x.png \
+  qt/natami/res/img/bg-welcome-container@3x.png \
+  qt/natami/res/img/ic-check-staking-off.svg \
+  qt/natami/res/img/ic-nav-master-hover.svg \
+  qt/natami/res/img/ic-watch-password.svg \
+  qt/natami/res/img/bg-welcome.jpg \
+  qt/natami/res/img/bg-welcome.svg \
+  qt/natami/res/img/bg-welcome@2x.jpg \
+  qt/natami/res/img/bg-welcome@3x.jpg \
+  qt/natami/res/img/bg-welcome.png \
+  qt/natami/res/img/ic-check-staking.svg \
+  qt/natami/res/img/ic-nav-master.svg \
+  qt/natami/res/img/img-dashboard-banner.jpg \
+  qt/natami/res/img/btn-radio-active.svg \
+  qt/natami/res/img/ic-check-mn-conf.svg \
+  qt/natami/res/img/ic-check-coin-conf.svg \
+  qt/natami/res/img/ic-check-sync-off.svg \
+  qt/natami/res/img/ic-nav-privacy-active.svg \
+  qt/natami/res/img/img-empty-contacts.svg \
+  qt/natami/res/img/btn-radio-off.svg \
+  qt/natami/res/img/ic-check-sync.png \
+  qt/natami/res/img/ic-nav-privacy-hover.svg \
+  qt/natami/res/img/img-empty-dark-contacts.svg \
+  qt/natami/res/img/ic-contact-arrow-down.svg \
+  qt/natami/res/img/ic-contact-arrow-down-white.svg \
+  qt/natami/res/img/ic-check-sync.svg \
+  qt/natami/res/img/ic-check-faq.svg \
+  qt/natami/res/img/ic-nav-privacy.svg \
+  qt/natami/res/img/img-empty-dark-error.svg \
+  qt/natami/res/img/ic-add-label.svg \
+  qt/natami/res/img/ic-pending.svg \
+  qt/natami/res/img/ic-check-theme-dark.svg \
+  qt/natami/res/img/ic-nav-receive-active.svg \
+  qt/natami/res/img/img-empty-dark-masternode.svg \
+  qt/natami/res/img/ic-add-liliac.svg \
+  qt/natami/res/img/ic-check-theme-light.svg \
+  qt/natami/res/img/ic-nav-receive-hover.svg \
+  qt/natami/res/img/img-empty-dark-multisend.svg \
+  qt/natami/res/img/ic-add-purple.svg \
+  qt/natami/res/img/ic-check-white.svg \
+  qt/natami/res/img/ic-nav-receive.svg \
+  qt/natami/res/img/img-empty-dark-peers.svg \
+  qt/natami/res/img/ic-add.svg \
+  qt/natami/res/img/ic-check.svg \
+  qt/natami/res/img/ic-nav-send-active.svg \
+  qt/natami/res/img/img-empty-dark-staking-off.svg \
+  qt/natami/res/img/img-empty-dark-staking-on.svg \
+  qt/natami/res/img/ic-address-book-grey.svg \
+  qt/natami/res/img/ic-chevron-left.svg \
+  qt/natami/res/img/ic-nav-send-hover.svg \
+  qt/natami/res/img/img-empty-dark-transactions.svg \
+  qt/natami/res/img/ic-address-book-white.svg \
+  qt/natami/res/img/ic-chevron-right.svg \
+  qt/natami/res/img/ic-nav-send.svg \
+  qt/natami/res/img/img-empty-error.svg \
+  qt/natami/res/img/ic-address-book.svg \
+  qt/natami/res/img/ic-clear-liliac.svg \
+  qt/natami/res/img/ic-nav-settings-active.svg \
+  qt/natami/res/img/img-empty-masternode.svg \
+  qt/natami/res/img/ic-address-send-white.svg \
+  qt/natami/res/img/ic-clear-purple.svg \
+  qt/natami/res/img/ic-nav-settings-hover.svg \
+  qt/natami/res/img/img-empty-multisend.svg \
+  qt/natami/res/img/ic-address-send.svg \
+  qt/natami/res/img/ic-close-white.svg \
+  qt/natami/res/img/ic-close-black.svg \
+  qt/natami/res/img/ic-nav-settings.svg \
+  qt/natami/res/img/img-empty-peers.svg \
+  qt/natami/res/img/img-empty-privacy.svg \
+  qt/natami/res/img/img-empty-privacy-dark.svg \
+  qt/natami/res/img/ic-arrow-drop-down-white.svg \
+  qt/natami/res/img/ic-close.svg \
+  qt/natami/res/img/ic-radio-liliac-on.svg \
+  qt/natami/res/img/img-empty-staking-off.svg \
+  qt/natami/res/img/ic-arrow-drop-down.svg \
+  qt/natami/res/img/ic-coin-nata.svg \
+  qt/natami/res/img/ic-receive-off.svg \
+  qt/natami/res/img/img-empty-staking-on.svg \
+  qt/natami/res/img/ic-arrow-drop-up-white.svg \
+  qt/natami/res/img/ic-coin-znata.png \
+  qt/natami/res/img/ic-receive-on.svg \
+  qt/natami/res/img/img-empty-transactions.svg \
+  qt/natami/res/img/ic-arrow-drop-up.svg \
+  qt/natami/res/img/ic-coin-znata.svg \
+  qt/natami/res/img/ic-received.svg \
+  qt/natami/res/img/img-logo-natami.png \
+  qt/natami/res/img/ic-arrow-drop-white-down.svg \
+  qt/natami/res/img/ic-combo-box.svg \
+  qt/natami/res/img/ic-send.svg \
+  qt/natami/res/img/img-logo-natami@2x.png \
+  qt/natami/res/img/ic-arrow-purple-down.svg \
+  qt/natami/res/img/ic-connect.svg \
+  qt/natami/res/img/ic-submenu-lock.svg \
+  qt/natami/res/img/img-logo-natami@3x.png \
+  qt/natami/res/img/img-logo-natami.svg \
+  qt/natami/res/img/ic-arrow-right-white.svg \
+  qt/natami/res/img/ic-arrow-left-white.svg \
+  qt/natami/res/img/ic-arrow-left.svg \
+  qt/natami/res/img/ic-copy-liliac.svg \
+  qt/natami/res/img/ic-submenu-staking.svg \
+  qt/natami/res/img/img-nav-logo-natami.png \
+  qt/natami/res/img/ic-arrow-right.svg \
+  qt/natami/res/img/ic-copy.svg \
+  qt/natami/res/img/ic-copy-big.svg \
+  qt/natami/res/img/ic-copy-big-white.svg \
+  qt/natami/res/img/ic-submenu-unlock.svg \
+  qt/natami/res/img/img-nav-logo.png \
+  qt/natami/res/img/ic-arrow-white-left.svg \
+  qt/natami/res/img/ic-exit.svg \
+  qt/natami/res/img/ic-switch-liliac-on.svg \
+  qt/natami/res/img/img-nav-logo.svg \
+  qt/natami/res/img/ic-arrow-white-right.svg \
+  qt/natami/res/img/ic-expand.svg \
+  qt/natami/res/img/ic-switch-off.svg \
+  qt/natami/res/img/img-qr-test-big.png \
+  qt/natami/res/img/ic-check-active.svg \
+  qt/natami/res/img/ic-folder.svg \
+  qt/natami/res/img/ic-switch-on.svg \
+  qt/natami/res/img/img-qr-test.png \
+  qt/natami/res/img/ic-check-box.svg \
+  qt/natami/res/img/ic-check-box-dark-active.svg \
+  qt/natami/res/img/ic-check-box-indeterminate.svg \
+  qt/natami/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/natami/res/img/ic-label-liliac.svg \
+  qt/natami/res/img/ic-transaction-warning.svg \
+  qt/natami/res/img/ic-transaction-mint.svg \
+  qt/natami/res/img/ic-transaction-mint-inactive.svg \
+  qt/natami/res/img/img-qr.svg \
+  qt/natami/res/img/ic-check-connect-off.svg \
+  qt/natami/res/img/ic-check-tor-off.svg \
+  qt/natami/res/img/ic-check-tor.svg \
+  qt/natami/res/img/ic-label.svg \
+  qt/natami/res/img/ic-transaction-received.svg \
+  qt/natami/res/img/dark/ic-transaction-received.svg \
+  qt/natami/res/img/dark/ic-transaction-warning.svg \
+  qt/natami/res/img/dark/ic-transaction-mint.svg \
+  qt/natami/res/img/dark/ic-transaction-mint-inactive.svg \
+  qt/natami/res/img/ic-transaction-received-inactive.svg \
+  qt/natami/res/img/dark/ic-transaction-received-inactive.svg \
+  qt/natami/res/img/img-welcome-step1.png \
+  qt/natami/res/img/ic-check-connect.svg \
+  qt/natami/res/img/ic-menu-hover.svg \
+  qt/natami/res/img/ic-transaction-sent.svg \
+  qt/natami/res/img/ic-transaction-sent-inactive.svg \
+  qt/natami/res/img/dark/ic-transaction-sent.svg \
+  qt/natami/res/img/dark/ic-transaction-sent-inactive.svg \
+  qt/natami/res/img/img-welcome-step2.png \
+  qt/natami/res/img/ic-check-dark.svg \
+  qt/natami/res/img/ic-mint.svg \
+  qt/natami/res/img/ic-transaction-staked.svg \
+  qt/natami/res/img/ic-transaction-staked-inactive.svg \
+  qt/natami/res/img/dark/ic-transaction-staked.svg \
+  qt/natami/res/img/dark/ic-transaction-staked-inactive.svg \
+  qt/natami/res/img/img-welcome-step3.png \
+  qt/natami/res/img/ic-check-liliac-on.svg \
+  qt/natami/res/img/ic-nav-address-active.svg \
+  qt/natami/res/img/ic-unlock-staking.svg \
+  qt/natami/res/img/img-welcome-step4.png \
+  qt/natami/res/img/ic-check-locked-off.svg \
+  qt/natami/res/img/ic-nav-address-hover.svg \
+  qt/natami/res/img/ic-update-liliac.svg \
+  qt/natami/res/img/ic-arrow-drop-down-purple.svg \
+  qt/natami/res/img/ic-arrow-drop-up-purple.svg \
+  qt/natami/res/img/ic-check-liliac-indeterminate.svg \
+  qt/natami/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/natami/res/img/ic-check-box-indeterminate.svg \
+  qt/natami/res/img/ani-loading-dark.gif \
+  qt/natami/res/img/ani-loading.gif
+
+
+
+BITCOIN_QT_BASE_CPP = \
+  qt/bantablemodel.cpp \
+  qt/bitcoinaddressvalidator.cpp \
+  qt/natami/natamigui.cpp \
+  qt/bitcoinunits.cpp \
+  qt/clientmodel.cpp \
+  qt/csvmodelwriter.cpp \
+  qt/guiutil.cpp \
+  qt/intro.cpp \
+  qt/networkstyle.cpp \
+  qt/notificator.cpp \
+  qt/optionsdialog.cpp \
+  qt/optionsmodel.cpp \
+  qt/peertablemodel.cpp \
+  qt/platformstyle.cpp \
+  qt/qvalidatedlineedit.cpp \
+  qt/qvaluecombobox.cpp \
+  qt/rpcconsole.cpp \
+  qt/trafficgraphwidget.cpp \
+  qt/utilitydialog.cpp
+
+BITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+
+BITCOIN_QT_WALLET_CPP = \
+  qt/addressbookpage.cpp \
+  qt/addresstablemodel.cpp \
+  qt/askpassphrasedialog.cpp \
+  qt/coincontroldialog.cpp \
+  qt/coincontroltreewidget.cpp \
+  qt/editaddressdialog.cpp \
+  qt/openuridialog.cpp \
+  qt/paymentrequestplus.cpp \
+  qt/paymentserver.cpp \
+  qt/recentrequeststablemodel.cpp \
+  qt/transactionfilterproxy.cpp \
+  qt/transactionrecord.cpp \
+  qt/transactiontablemodel.cpp \
+  qt/walletmodel.cpp \
+  qt/walletmodeltransaction.cpp \
+  qt/natami/loadingdialog.cpp \
+  qt/natami/pwidget.cpp \
+  qt/natami/focuseddialog.cpp \
+  qt/natami/guitransactionsutils.cpp \
+  qt/natami/snackbar.cpp \
+  qt/natami/navmenuwidget.cpp \
+  qt/natami/lockunlock.cpp \
+  qt/natami/receivedialog.cpp \
+  qt/natami/furabstractlistitemdelegate.cpp \
+  qt/natami/txviewholder.cpp \
+  qt/natami/qtutils.cpp \
+  qt/natami/expandablebutton.cpp \
+  qt/natami/topbar.cpp \
+  qt/natami/txrow.cpp \
+  qt/natami/addressholder.cpp \
+  qt/natami/addressfilterproxymodel.cpp \
+  qt/natami/dashboardwidget.cpp \
+  qt/natami/addresslabelrow.cpp \
+  qt/natami/contactdropdownrow.cpp \
+  qt/natami/contactsdropdown.cpp \
+  qt/natami/optionbutton.cpp \
+  qt/natami/mninfodialog.cpp \
+  qt/natami/mnmodel.cpp \
+  qt/natami/masternodewizarddialog.cpp \
+  qt/natami/mnrow.cpp \
+  qt/natami/masternodeswidget.cpp \
+  qt/natami/myaddressrow.cpp \
+  qt/natami/sendchangeaddressdialog.cpp \
+  qt/natami/sendconfirmdialog.cpp \
+  qt/natami/sendcustomfeedialog.cpp \
+  qt/natami/sendchangeaddressdialog.cpp \
+  qt/natami/sendmultirow.cpp \
+  qt/natami/send.cpp \
+  qt/natami/addnewaddressdialog.cpp \
+  qt/natami/addnewcontactdialog.cpp \
+  qt/natami/requestdialog.cpp \
+  qt/natami/receivewidget.cpp \
+  qt/natami/tooltipmenu.cpp \
+  qt/natami/addresseswidget.cpp \
+  qt/natami/defaultdialog.cpp \
+  qt/natami/settings/settingsbackupwallet.cpp \
+  qt/natami/settings/settingsexportcsv.cpp \
+  qt/natami/settings/settingsbittoolwidget.cpp \
+  qt/natami/settings/settingsconsolewidget.cpp \
+  qt/natami/settings/settingsdisplayoptionswidget.cpp \
+  qt/natami/settings/settingsfaqwidget.cpp \
+  qt/natami/settings/settingsinformationwidget.cpp \
+  qt/natami/settings/settingsmainoptionswidget.cpp \
+  qt/natami/settings/settingsmultisenddialog.cpp \
+  qt/natami/settings/settingsmultisendwidget.cpp \
+  qt/natami/settings/settingssignmessagewidgets.cpp \
+  qt/natami/settings/settingswalletoptionswidget.cpp \
+  qt/natami/settings/settingswalletrepairwidget.cpp \
+  qt/natami/settings/settingswidget.cpp \
+  qt/natami/welcomecontentwidget.cpp \
+  qt/natami/splash.cpp
+
+
+BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
+if TARGET_WINDOWS
+BITCOIN_QT_CPP += $(BITCOIN_QT_WINDOWS_CPP)
+endif
+if ENABLE_WALLET
+BITCOIN_QT_CPP += $(BITCOIN_QT_WALLET_CPP)
+endif
+
+RES_IMAGES = \
+  qt/res/images/about.png \
+  qt/res/images/splash.png \
+  qt/res/images/splash_testnet.png \
+  qt/res/images/splash_regtest.png
+
+RES_CSS = \
+  qt/res/css/default.css \
+  qt/natami/res/css/style_dark.css \
+  qt/natami/res/css/style_light.css
+
+BITCOIN_RC = qt/res/natami-qt-res.rc
+
+BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+  -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
+
+qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_libbitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libbitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS)
+
+nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+  $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
+
+# forms/foo.h -> forms/ui_foo.h
+QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
+
+# Most files will depend on the forms and moc files as includes. Generate them
+# before anything else.
+$(QT_MOC): $(QT_FORMS_H)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_natami_qt_OBJECTS) : | $(QT_MOC)
+
+#Generating these with a half-written protobuf header leads to wacky results.
+#This makes sure it's done.
+$(QT_MOC): $(PROTOBUF_H)
+$(QT_MOC_CPP): $(PROTOBUF_H)
+
+# natami-qt binary #
+qt_natami_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_natami_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_natami_qt_SOURCES = qt/natami.cpp
+if TARGET_DARWIN
+  qt_natami_qt_SOURCES += $(BITCOIN_MM)
+endif
+if TARGET_WINDOWS
+  qt_natami_qt_SOURCES += $(BITCOIN_RC)
+endif
+qt_natami_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+if ENABLE_WALLET
+qt_natami_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+endif
+if ENABLE_ZMQ
+qt_natami_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+endif
+qt_natami_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBZCASH_LIBS) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+  $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(SVG_LIBS) $(CHARTS_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
+  $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+qt_natami_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_natami_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+
+#locale/foo.ts -> locale/foo.qm
+QT_QM=$(QT_TS:.ts=.qm)
+
+SECONDARY: $(QT_QM)
+
+$(srcdir)/qt/natamistrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
+	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
+
+translate: $(srcdir)/qt/natamistrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/natami.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/natami_en.ts
+
+$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
+	@test -f $(RCC)
+	@cp -f $< $(@D)/temp_$(<F)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name natami_locale $(@D)/temp_$(<F) | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+	@rm $(@D)/temp_$(<F)
+
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(PROTOBUF_H)
+	@test -f $(RCC)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name natami $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_natami_locale.qrc
+
+CLEANFILES += $(CLEAN_QT)
+
+natami_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_natami_qt_OBJECTS) qt/natami-qt$(EXEEXT) $(LIBBITCOINQT)
+
+natami_qt : qt/natami-qt$(EXEEXT)
+
+ui_%.h: %.ui
+	@test -f $(UIC)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(UIC) -o $@ $< || (echo "Error creating $@"; false)
+
+%.moc: %.cpp
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+moc_%.cpp: %.h
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+%.qm: %.ts
+	@test -f $(LRELEASE)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@

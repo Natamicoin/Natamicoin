@@ -1,0 +1,15 @@
+QT_TS = \
+  qt/locale/natami_de.ts \
+  qt/locale/natami_en.ts \
+  qt/locale/natami_en_US.ts \
+  qt/locale/natami_es.ts \
+  qt/locale/natami_es_ES.ts \
+  qt/locale/natami_fr_FR.ts \
+  qt/locale/natami_hr_HR.ts \
+  qt/locale/natami_it.ts \
+  qt/locale/natami_ko_KR.ts \
+  qt/locale/natami_nl.ts \
+  qt/locale/natami_pl.ts \
+  qt/locale/natami_ru.ts \
+  qt/locale/natami_tr.ts \
+  qt/locale/natami_zh_CN.ts
