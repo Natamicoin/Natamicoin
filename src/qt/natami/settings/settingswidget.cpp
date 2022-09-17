@@ -59,7 +59,7 @@ SettingsWidget::SettingsWidget(NATAMIGUI* parent) :
     setCssProperty(ui->pushButtonTools5, "btn-settings-options");
 
     setCssProperty(ui->pushButtonHelp, "btn-settings-check");
-    setCssProperty(ui->pushButtonHelp1, "btn-settings-options");
+//    setCssProperty(ui->pushButtonHelp1, "btn-settings-options");
     setCssProperty(ui->pushButtonHelp2, "btn-settings-options");
 
     options = {
