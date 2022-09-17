@@ -1,4 +1,4 @@
-﻿![](share/pixmaps/bg-splash.png)
+![](share/pixmaps/bg-splash.png)
 
 
 
