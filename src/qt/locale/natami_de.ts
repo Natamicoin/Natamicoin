@@ -1,4 +1,4 @@
-<TS language="de" version="2.1">
+﻿<TS language="de" version="2.1">
 <context>
     <name>AddNewAddressDialog</name>
     <message>
@@ -1208,7 +1208,7 @@ Sie können den Node jederzeit deaktivieren und die Coins entriegeln.&lt;/p&gt;&
         <translation>Starte Inaktive</translation>
     </message>
     <message>
-        <source>Masternodes</source>
+        <source>Green</source>
         <translation>Masternodes</translation>
     </message>
     <message>
@@ -4986,11 +4986,11 @@ Wählen Sie weniger Eingänge über coin control aus.</translation>
         <translation>Willkommen</translation>
     </message>
     <message>
-        <source>Privacy</source>
+        <source>Wallacoin</source>
         <translation>Privatsphäre</translation>
     </message>
     <message>
-        <source>Masternodes</source>
+        <source>Staking</source>
         <translation>Masternodes</translation>
     </message>
     <message>
@@ -4998,20 +4998,20 @@ Wählen Sie weniger Eingänge über coin control aus.</translation>
         <translation>Wählen Sie Ihre Sprache</translation>
     </message>
     <message>
-        <source>Natami Beyond</source>
-        <translation>Natami Beyond</translation>
+        <source>Natami - Natura Amica</source>
+        <translation>Natami - Natura Amica</translation>
     </message>
     <message>
-        <source>Natami beyond forum is the first cryptocurrency forum with its own blockchain based on PoS.</source>
-        <translation>Natami beyond forum is the first cryptocurrency forum with its own blockchain based on PoS.</translation>
+        <source>Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.</source>
+        <translation>Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Share your opinion, solve your doubts and contribute adding new content while receiving passive income from our Masternodes and Staking.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Share your opinion, solve your doubts and contribute adding new content while receiving passive income from our Masternodes and Staking.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Masternodes are part of the infrastructure that sustains Natami coin. They verify new blocks and perform special roles in governing the blockchain.</source>
-        <translation>Masternodes are part of the infrastructure that sustains Natami coin. They verify new blocks and perform special roles in governing the blockchain.</translation>
+        <source>Proof of Stake is roughly 99% more energy efficient than PoW due to its reliance on stake and not power to find consensus across the network and mint new blocks. This difference in participation requirements also lowers the barrier to entry for lower end machines who wish to participate in consensus.</source>
+        <translation>Proof of Stake is roughly 99% more energy efficient than PoW due to its reliance on stake and not power to find consensus across the network and mint new blocks. This difference in participation requirements also lowers the barrier to entry for lower end machines who wish to participate in consensus.</translation>
     </message>
     <message>
         <source>Be inspired by community</source>
@@ -5210,7 +5210,7 @@ Wählen Sie weniger Eingänge über coin control aus.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer. Natami is probably already running.</source>
-        <translation>Fehler: Port %s ist bereits belegt! Läuft bereits eine andere Natami Beyond ?</translation>
+        <translation>Fehler: Port %s ist bereits belegt! Läuft bereits eine andere Natami - Natura Amica ?</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>

@@ -1503,7 +1503,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="-240"/>
-        <source>Masternodes</source>
+        <source>Green</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6255,12 +6255,12 @@ Select fewer inputs with coin control.</source>
     </message>
     <message>
         <location line="+41"/>
-        <source>Privacy</source>
+        <source>Natami</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Masternodes</source>
+        <source>Green</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6270,22 +6270,22 @@ Select fewer inputs with coin control.</source>
     </message>
     <message>
         <location line="+89"/>
-        <source>Natami Beyond</source>
+        <source>Natami - Natura Amica</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+27"/>
-        <source>Natami beyond forum is the first cryptocurrency forum with its own blockchain based on PoS.</source>
+        <source>Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Share your opinion, solve your doubts and contribute adding new content while receiving passive income from our Masternodes and Staking.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+83"/>
-        <source>Masternodes are part of the infrastructure that sustains Natami coin. They verify new blocks and perform special roles in governing the blockchain.</source>
+        <source>Proof of Stake is roughly 99% more energy efficient than PoW due to its reliance on stake and not power to find consensus across the network and mint new blocks. This difference in participation requirements also lowers the barrier to entry for lower end machines who wish to participate in consensus.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -73,17 +73,19 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (1, uint256S("0x000001121c0ab6ca048e16abcf8c5f879bebd343332fb1bbba362ef220756f8e"))
     (16, uint256S("0x000001c0c332f62890239172d46abce05640b52b8ec79a7d2dd9840881785c81"))
     (200, uint256S("0x000006ad8a712073196e6aee0bd45a297ad37dc4635abd424efc5302fa7b8b3b"))
-    (1806, uint256S("0x000002bbaa6f1293a2cc55ed631c2d00606691895cc68abc51d7fed45058963a"))
+    (1806, uint256S("0x000002bbaa6f1293a2cc55ed631c2d00606691895cc68abc51d7fed45058963a"))  // confirmed transaction
     (1880, uint256S("0x0000033f7a3abe6c529ccf9b068212be020b1d6e4783b4924abe2c9d640e3d74"))
-    (2000, uint256S("0x00000e6e11a2df8e06e99b1c96048796d374957f5fb71590cd6fa1f838328a4b"))
-    (2001, uint256S("0x86d9820f43ad6b0dabd725c71394595ffac96fd2c5f8ba511efa225ddeabb54a"))
-    (2006, uint256S("0xa12675dc1a32a3652a1ee965ca240482b3bcc225a5946f8839bd02eb2d910dbf"))
-    (2165, uint256S("0x4f848f7d41901379f46f5ab4bd4cf130c0a7cc2c76f0e54cee8e753be3c58543"))
-    (2441, uint256S("0x689923dd20b0f9c250c235e220d554c0309312e27d98ccd4aac853ccdabd9ffd"))
-    (2541, uint256S("0x0fee8657105fbcc21ebfa593b3a84771eb108c4894e26cb97080b5ee085e4379"))
-    (2641, uint256S("0x8309f65e388618b7d0d0371736845bf522f63bb20d44ef1ab1fce8e0dfdf3759"))
-    (2741, uint256S("0xbae93c5b48e3d3e4808e8bdf43cf788d41fe4f66a1b12712af28114cd75f9313"))
-    (2753, uint256S("0x33d073c224952d77aa87a924d41bfc56df78d40859dda7c631dce6221fcfd445"));
+    (2000, uint256S("0x00000e6e11a2df8e06e99b1c96048796d374957f5fb71590cd6fa1f838328a4b"))  // POW end
+    (2001, uint256S("0x86d9820f43ad6b0dabd725c71394595ffac96fd2c5f8ba511efa225ddeabb54a"))  // POS start
+    (2006, uint256S("0xa12675dc1a32a3652a1ee965ca240482b3bcc225a5946f8839bd02eb2d910dbf"))  
+    (2165, uint256S("0x4f848f7d41901379f46f5ab4bd4cf130c0a7cc2c76f0e54cee8e753be3c58543"))  // confirmed transaction
+    (2441, uint256S("0x689923dd20b0f9c250c235e220d554c0309312e27d98ccd4aac853ccdabd9ffd"))  // POS V2 & BIP65 start
+    (2541, uint256S("0x0fee8657105fbcc21ebfa593b3a84771eb108c4894e26cb97080b5ee085e4379"))  // STAKE MODIFIER V2 start
+    (2641, uint256S("0x8309f65e388618b7d0d0371736845bf522f63bb20d44ef1ab1fce8e0dfdf3759"))  // TIME PROTOCOL V2 start
+    (2741, uint256S("0xbae93c5b48e3d3e4808e8bdf43cf788d41fe4f66a1b12712af28114cd75f9313"))  // P2PKH BLOCK SIGNATURES start
+    (2753, uint256S("0x33d073c224952d77aa87a924d41bfc56df78d40859dda7c631dce6221fcfd445"))
+    (4651, uint256S("0x8a346402d80afd4292c4491e2bfce1285407c49ebc0bb9bd96beedb10c57d380"))  // confirmed transaction
+    (6001, uint256S("0x1090f47370eb9c04e8f00079b0a8f9a1076b93047fd941cf5eacff0456ebd819"));  // STAKE MIN DEPTH V2 start
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -204,7 +206,7 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_STAKE_MODIFIER_V2].hashActivationBlock      = uint256S("0x0fee8657105fbcc21ebfa593b3a84771eb108c4894e26cb97080b5ee085e4379");
         consensus.vUpgrades[Consensus::UPGRADE_TIME_PROTOCOL_V2].hashActivationBlock       = uint256S("0x8309f65e388618b7d0d0371736845bf522f63bb20d44ef1ab1fce8e0dfdf3759");
         consensus.vUpgrades[Consensus::UPGRADE_P2PKH_BLOCK_SIGNATURES].hashActivationBlock = uint256S("0xbae93c5b48e3d3e4808e8bdf43cf788d41fe4f66a1b12712af28114cd75f9313");
-        consensus.vUpgrades[Consensus::UPGRADE_STAKE_MIN_DEPTH_V2].hashActivationBlock     = uint256S("0x0");
+        consensus.vUpgrades[Consensus::UPGRADE_STAKE_MIN_DEPTH_V2].hashActivationBlock     = uint256S("0x1090f47370eb9c04e8f00079b0a8f9a1076b93047fd941cf5eacff0456ebd819");
         consensus.vUpgrades[Consensus::UPGRADE_MASTERNODE_RANK_V2].hashActivationBlock     = uint256S("0x0");
 
         /**

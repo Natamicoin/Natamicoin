@@ -1148,7 +1148,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>停止活跃／秒</translation>
     </message>
     <message>
-        <source>Masternodes</source>
+        <source>Green</source>
         <translation>主节点</translation>
     </message>
     <message>
@@ -4588,11 +4588,11 @@ backup will be created.
         <translation>欢迎</translation>
     </message>
     <message>
-        <source>Privacy</source>
+        <source>Natami</source>
         <translation>隐私</translation>
     </message>
     <message>
-        <source>Masternodes</source>
+        <source>Green</source>
         <translation>主节点</translation>
     </message>
     <message>
@@ -4600,20 +4600,20 @@ backup will be created.
         <translation>选择语言</translation>
     </message>
     <message>
-        <source>Natami Beyond</source>
-        <translation>Natami Beyond</translation>
+        <source>Natami - Natura Amica</source>
+        <translation>Natami - Natura Amica</translation>
     </message>
     <message>
-        <source>Natami beyond forum is the first cryptocurrency forum with its own blockchain based on PoS.</source>
-        <translation>Natami beyond forum is the first cryptocurrency forum with its own blockchain based on PoS.</translation>
+        <source>Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.</source>
+        <translation>Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Share your opinion, solve your doubts and contribute adding new content while receiving passive income from our Masternodes and Staking.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Share your opinion, solve your doubts and contribute adding new content while receiving passive income from our Masternodes and Staking.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Masternodes are part of the infrastructure that sustains Natami coin. They verify new blocks and perform special roles in governing the blockchain.</source>
-        <translation>Masternodes are part of the infrastructure that sustains Natami coin. They verify new blocks and perform special roles in governing the blockchain.</translation>
+        <source>Proof of Stake is roughly 99% more energy efficient than PoW due to its reliance on stake and not power to find consensus across the network and mint new blocks. This difference in participation requirements also lowers the barrier to entry for lower end machines who wish to participate in consensus.</source>
+        <translation>Proof of Stake is roughly 99% more energy efficient than PoW due to its reliance on stake and not power to find consensus across the network and mint new blocks. This difference in participation requirements also lowers the barrier to entry for lower end machines who wish to participate in consensus.</translation>
     </message>
     <message>
         <source>Be inspired by community</source>

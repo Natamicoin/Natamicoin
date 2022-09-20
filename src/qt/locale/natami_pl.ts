@@ -1150,7 +1150,7 @@ Rozpocznie się automatycznie, gdy portfel będzie miał wystarczającą liczbę
         <translation>Start Inactive/s</translation>
     </message>
     <message>
-        <source>Masternodes</source>
+        <source>Green</source>
         <translation>Masternodes</translation>
     </message>
     <message>
@@ -4459,11 +4459,11 @@ kopia zapasowa zostanie utworzona.
         <translation>Zapraszamy</translation>
     </message>
     <message>
-        <source>Privacy</source>
+        <source>Natami</source>
         <translation>Prywatność</translation>
     </message>
     <message>
-        <source>Masternodes</source>
+        <source>Green</source>
         <translation>Masternodes</translation>
     </message>
     <message>
@@ -4471,16 +4471,16 @@ kopia zapasowa zostanie utworzona.
         <translation>Wybierz swój język</translation>
     </message>
     <message>
-        <source>Natami Beyond</source>
-        <translation>Natami Beyond</translation>
+        <source>Natami - Natura Amica</source>
+        <translation>Natami - Natura Amica</translation>
     </message>
     <message>
-        <source>Natami beyond forum is the first cryptocurrency forum with its own blockchain based on PoS.</source>
-        <translation>Natami beyond forum is the first cryptocurrency forum with its own blockchain based on PoS.</translation>
+        <source>Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.</source>
+        <translation>Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Share your opinion, solve your doubts and contribute adding new content while receiving passive income from our Masternodes and Staking.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Share your opinion, solve your doubts and contribute adding new content while receiving passive income from our Masternodes and Staking.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Natami or Natura Amica stands for Nature Friendly in Latin, which means that all we try to accomplish is based on the philisophy of generating a better and greener future for everyone.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Be inspired by community</source>
